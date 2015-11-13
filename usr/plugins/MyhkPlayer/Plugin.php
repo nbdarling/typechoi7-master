@@ -4,7 +4,7 @@
  * 
  * @package 明月浩空播放器免费版
  * @author 明月浩空
- * @version 20150729
+ * @version 20150801
  * @link http://limh.me
  */
 class MyhkPlayer_Plugin implements Typecho_Plugin_Interface
@@ -48,10 +48,10 @@ class MyhkPlayer_Plugin implements Typecho_Plugin_Interface
 		$start4 = strpos($content, "F=", 0);
 		$end4   = strpos($content, "G", $start4);
 		$xiazai = substr($content, $start4+2, $end4-$start4-2);
-		if($banben=='20150729'){
-			$title= '当前版本：<span class="sel">20150729</span> 暂无更新！';
+		if($banben=='20150801'){
+			$title= '当前版本：<span class="sel">20150801</span> 暂无更新！';
 		}else{
-			$title= '当前版本：<span class="sel">20150729</span></br></br>最新版本：<span class="sel"><a style="color:#f00" href="http://free.limh.me/update_'.$banben.'.html" title="点击查看'.$banben.'版本更新日志" target="_blank">'.$banben.'</a></span> 请<a title="点击下载播放器插件'.$banben.'版本" href="'.$xiazai.'" target="_blank">[点击这里]</a>下载';
+			$title= '当前版本：<span class="sel">20150801</span></br></br>最新版本：<span class="sel"><a style="color:#f00" href="http://free.limh.me/update_'.$banben.'.html" title="点击查看'.$banben.'版本更新日志" target="_blank">'.$banben.'</a></span> 请<a title="点击下载播放器插件'.$banben.'版本" href="'.$xiazai.'" target="_blank">[点击这里]</a>下载';
 		}
         $domain = new Typecho_Widget_Helper_Form_Element_Text('domain', NULL, '填写歌单后台显示的绑定域名', _t(''.$title.'</br></br>免费版后台：<a href="http://free.limh.me/admin" target="_blank">http://free.limh.me</b></a> 商业版购买联系<a href="http://wpa.qq.com/msgrd?v=3&uin=6354321&site=qq&menu=yes" target="_blank">QQ：6354321</a></br></br>绑定域名[填写歌单后台显示的绑定域名，不加http://和www]：'));
         $form->addInput($domain);
@@ -77,7 +77,7 @@ class MyhkPlayer_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/MyhkPlayer/style/player.css?ver=20150729';
+        $cssUrl = Helper::options()->pluginUrl . '/MyhkPlayer/style/player.css?ver=20150801';
 		echo '<script src="http://libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>' . "\n";
         echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />' . "\n";
 		echo '<link href="http://libs.baidu.com/fontawesome/4.2.0/css/font-awesome.css" rel="stylesheet" type="text/css" />'."\n";
@@ -92,7 +92,7 @@ class MyhkPlayer_Plugin implements Typecho_Plugin_Interface
         $options = Typecho_Widget::widget('Widget_Options')->plugin('MyhkPlayer'); 
         $jsUrl1 = Helper::options()->pluginUrl . '/MyhkPlayer/js/mousewheel.js';
 		$jsUrl2 = Helper::options()->pluginUrl . '/MyhkPlayer/js/scrollbar.js';
-		$jsUrl3 = Helper::options()->pluginUrl . '/MyhkPlayer/js/player.js?ver=20150729';
+		$jsUrl3 = Helper::options()->pluginUrl . '/MyhkPlayer/js/player.js?ver=20150801';
         echo '<script type="text/javascript">name="'.$options->name.'";domain="'.$options->domain.'";key="'.$options->key.'";</script>
 <div id="wenkmPlayer">
 	<div class="player">
